@@ -1,6 +1,20 @@
 <html>
 <head>
 	<title>toyoumessage</title>
+	<script type="text/javascript">
+        window.onload=function(){
+            var story = document.getElementById('word');
+            var s = document.getElementById('show');
+            var i = 0;
+            timer=setInterval(function(){
+                s.innerHTML=story.innerHTML.substring(0,i);
+                i++;
+                if(s.innerHTML==story.innerHTML){
+                    clearInterval(timer);
+                }
+            },200);
+        }
+    </script>
 </head>
 <body>
 我们相爱：
@@ -30,5 +44,7 @@ function show(){
 	}
 show();
 </script> 
+<p id="word" style="display:none;">从前有座山，山里有座庙，庙里的和尚讲故事，讲的啥故事；从前有座山。。。</p>
+<p id="show"></p>
 </body>
 </html>
